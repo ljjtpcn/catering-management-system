@@ -140,6 +140,12 @@ public class DeskManagerViewHandler implements ActionListener, MouseListener {
     private void getData() {
         Services services = new ServicesImpl();
         Vector<Vector<Object>> returnData;
+
+        if("".equals(deskManagerView.getDeskSeatingTextField().getText().trim()) ||
+                deskManagerView.getDeskSeatingTextField().getText() == null){
+            JOptionPane.showMessageDialog(deskManagerView, "请先输入餐桌人数", "查询餐台信息", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         try {
             returnData = services.getDeskData(deskManagerView.getDeskNoTextField().getText(),
                     Integer.valueOf(deskManagerView.getDeskSeatingTextField().getText()),

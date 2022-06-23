@@ -6,17 +6,6 @@
 <!--名称空间-->
 <mapper namespace="cn.twopair.mappers.FoodMapper">
 
-    <!--    <parameterMap id="paramFood" type="java.util.Map">-->
-    <!--        <parameter property="name" mode="IN" jdbcType="VARCHAR"/>-->
-    <!--        <parameter property="categoryId" mode="IN" jdbcType="INTEGER"/>-->
-    <!--        <parameter property="price" mode="IN" jdbcType="DOUBLE"/>-->
-    <!--        <parameter property="describe" mode="IN" jdbcType="VARCHAR"/>-->
-    <!--        <parameter property="status" mode="IN" jdbcType="VARCHAR"/>-->
-    <!--        <parameter property="flag" mode="OUT" jdbcType="INTEGER"/>-->
-    <!--    </parameterMap>-->
-    <!--    <select id="addOneFood" parameterMap="paramFood" statementType="CALLABLE">-->
-    <!--        CALL add_one_foodItem(?, ?, ?, ?, ?, ?)-->
-    <!--    </select>-->
     <insert id="addOneFood" parameterType="cn.twopair.pojo.Food">
         INSERT INTO food(name, categoryId, price, `describe`, status, sum, filePath)
         VALUES (#{food.name},

@@ -90,7 +90,7 @@ public class OrderViewHandler implements ActionListener, MouseListener {
         order.setStatus("未支付");
         order.setNumber(Integer.valueOf(orderView.getCustomerNumberTextField().getText()));
 
-        int orderCount = orderView.getAlreadyAddFoodTable().getRowCount();
+            int orderCount = orderView.getAlreadyAddFoodTable().getRowCount();
         double sumMoney = 0.0;
         for (int i = 0; i < orderCount; i++) {
             Double money = Double.valueOf(String.valueOf(orderView.getAlreadyAddFoodTable().getValueAt(i, 2)));
